@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="index.js" defer></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+</head>
+<body>
+
+<div class="header">
+    <a href="#" >nallamalla</a>
+    <input  type="text" id="searchInput" placeholder="Search for products,categoris and etc..." onkeyup="searchProducts()" >
+    <button onclick="document.getElementById('login').style.display='block'" style="width:auto;">Login</button>
+    <button onclick="openCart()" style="width:auto;">Cart</button>
+     <!-- Link to open the modal -->
+  
+</div>
+
+<div id="login" class="modal">
+  
+    <form class="modal-content animate"  method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
+  
+      <div class="container">
+        <label  for="uname"><b>Username</b></label>
+        <input id="Username" type="text" placeholder="Enter Username" name="uname" required>
+  
+        <label  for="psw"><b>Password</b></label>
+        <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+          
+        <button type="submit" onclick="login(event)" >Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button"  onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+
+
+  
+  <div id="cart" class="modal">
+  <h1> Your Cart!!!</h1>
+  </div>
+
+
+  
+ 
+<ul id="Categories">
+    <li><button onclick="filterProducts('Electronics')">Electronics</button></li>
+    <li><button onclick="filterProducts('SportsMusic')">Sports & Music</button></li>
+    <li><button onclick="filterProducts('Fashion')">Fashion</button></li>
+    <li><button onclick="filterProducts('HealthBeauty')">Health & Beauty</button></li>
+</ul>
+
+
+
+    <main id="test">
+        <h4 id="searchResults">
+            </h4>
+    </main>
+
+
+
+
+</body>
+</html>
+
+
+
